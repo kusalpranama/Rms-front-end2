@@ -1,0 +1,40 @@
+<header class="p-3 bg-dark text-white fixed-top">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="logo.jpeg" alt="" width="75" height="75" class="me-2">
+                <span class="fs-4">RMS</span>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-lg-0">
+                <li><a [routerLink]="['/Home']" class="nav-link px-3 text-white">Home</a></li>
+                <li><a [routerLink]="['/Item']" class="nav-link px-3 text-white">ITEM</a></li>
+                <li><a [routerLink]="['/Contact']" class="nav-link px-3 text-white">Contact</a></li>
+            </ul>
+
+            <div id="search-container" class="search-box-wrapper hide">
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form">
+                        <label>
+                            <span class="screen-reader-text"></span>
+                            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+                        </label>
+                        <input type="submit" class="search-submit" value="Search" />
+                    </form>
+                </div>
+            </div>
+
+            <ng-container>
+                <div class="text-end">
+                    <button [routerLink]="['/Login']" type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button [routerLink]="['/Signup']" type="button" class="btn btn-warning">Sign Up</button>
+                    
+                    <!-- Cart Icon -->
+                    <a [routerLink]="['/Cart']" class="text-white ms-3">
+                        <img src="cart.png" alt="Cart" width="30" height="30">
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</header>

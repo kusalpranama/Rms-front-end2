@@ -1,0 +1,15 @@
+.hero {
+    background-image: url('../../../../public/Home.jpg'); /* Replace with your image */
+    background-size: cover;
+    height: 500px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}

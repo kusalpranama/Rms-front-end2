@@ -1,0 +1,121 @@
+
+<br><br><br><br><br>
+<h1 >Manage Items</h1>
+
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <h3>Add Item</h3>
+            </td>
+            <td> :> </td>
+            <td>
+                <button class="btn btn-warning"data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addItems(item)" ><i class="bi bi-grid-3x3-gap"></i></button>
+            </td>
+           
+        </tr>
+    </table>
+   
+   
+   
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Count</th>
+        <th>ItemID</th>
+        <th>ItemName</th>
+        <th>Description</th>
+        <th>rentalCost</th>
+        <th>inventory</th>
+    </tr>
+    <tr *ngFor="let item of itemList; index as i">
+        <td>{{i+1}}</td>
+        <td>{{item.itemId}}</td>
+        <td>{{item.itemName}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.rentalCost}}</td>
+        <td>{{item.inventory}}</td>
+        <td><button class="btn btn-danger" (click)="deleteItemById(item.itemId)"><i class="bi bi-trash-fill"></i></button></td>
+        <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateItem(item)" ><i class="bi bi-pencil-square"></i></button></td>
+
+    </tr>
+</table>
+
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update Item</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">ID</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemp.itemId" id="recipient-name" disabled="true">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Item Name</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemp.itemName" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Description</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemp.description" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">RentalCost</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemp.rentalCost" id="recipient-name">
+            </div>
+            <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Inventory</label>
+                <input type="text" class="form-control" [(ngModel)]="itemTemp.inventory" id="recipient-name">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveItem()" data-bs-dismiss="modal">Update Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Item</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">ID</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemps.itemId" id="recipient-name" disabled="true">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Item Name</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemps.itemName" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Description</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemps.description" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">RentalCost</label>
+              <input type="text" class="form-control" [(ngModel)]="itemTemps.rentalCost" id="recipient-name">
+            </div>
+            <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Inventory</label>
+                <input type="text" class="form-control" [(ngModel)]="itemTemps.inventory" id="recipient-name">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addItem()" data-bs-dismiss="modal">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,36 @@
+
+<br><br><br><br><br>
+<h1 > Item List</h1>
+
+<div class="container">
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Count</th>
+        <th>ItemID</th>
+        <th>ItemName</th>
+        <th>Description</th>
+        <th>rentalCost</th>
+        <th>inventory</th>
+    </tr>
+    <tr *ngFor="let item of itemList; index as i">
+        <td>{{i+1}}</td>
+        <td>{{item.itemId}}</td>
+        <td>{{item.itemName}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.rentalCost}}</td>
+        <td>{{item.inventory}}</td>
+        <button type="button" class="btn btn-primary" (click)="addToCart(item)"><i class="bi bi-cart-check-fill"></i></button>
+
+    </tr>
+    <tr>
+        <td><br><br></td>
+        <td><br><br></td>
+        <td><br><br></td>
+        <td><br><br></td>
+        <td><br><br></td>
+        <td><br><br></td>
+        <td> <button type="button" class="btn btn-warning" (click)="placeOrder(item)">PlaceOrder</button></td>
+    </tr>
+</table>
+
+</div>
