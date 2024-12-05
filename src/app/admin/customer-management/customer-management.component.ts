@@ -2,12 +2,13 @@ import { CommonModule, NgFor } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-customer-management',
   standalone: true,
-  imports: [FormsModule,CommonModule,NgFor,HttpClientModule],
+  imports: [FormsModule,CommonModule,NgFor,HttpClientModule,RouterLink],
   templateUrl: './customer-management.component.html',
   styleUrl: './customer-management.component.css'
 })
