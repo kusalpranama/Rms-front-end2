@@ -43,7 +43,7 @@ export class ItemComponent implements OnInit {
       dueDate: this.calculateDueDate()
     };
 
-    this.http.post(this.apiUrl, rental).subscribe(
+    this.http.post("http://localhost:8081/rental/create",rental).subscribe(
       response => {
         alert(`Rental created successfully! Total: $${totalCost}`);
         this.cart = []; 
